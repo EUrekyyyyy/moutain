@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球山峰美术馆 | Global Mountain Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="title">
+                <span class="title-en">Global Mountain Gallery</span>
+                <span class="title-cn">全球山峰美术馆</span>
+            </h1>
+            <p class="subtitle">探索世界最壮美的山峰，感受大自然的诗意与力量</p>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <div class="container">
+            <div class="controls-container">
+                <div class="filter-section">
+                    <label class="control-label">按大洲筛选：</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">全部</button>
+                        <button class="filter-btn" data-filter="asia">亚洲</button>
+                        <button class="filter-btn" data-filter="europe">欧洲</button>
+                        <button class="filter-btn" data-filter="north_america">北美洲</button>
+                        <button class="filter-btn" data-filter="south_america">南美洲</button>
+                        <button class="filter-btn" data-filter="africa">非洲</button>
+                        <button class="filter-btn" data-filter="oceania">大洋洲</button>
+                        <button class="filter-btn" data-filter="antarctica">南极洲</button>
+                    </div>
+                </div>
+                
+                <div class="sort-section">
+                    <label class="control-label">排序方式：</label>
+                    <select id="sortSelect" class="sort-select">
+                        <option value="default">默认顺序</option>
+                        <option value="height_desc">海拔高度 (高→低)</option>
+                        <option value="height_asc">海拔高度 (低→高)</option>
+                        <option value="name_asc">名称 (A→Z)</option>
+                    </select>
+                </div>
+                
+                <div class="search-section">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="搜索山峰名称或地区...">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <div class="gallery" id="gallery">
+                <!-- 山峰卡片将由JavaScript动态生成 -->
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <div class="modal-info">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-elevation" id="modalElevation"></p>
+                <p class="modal-description" id="modalDescription"></p>
+                <p class="modal-location" id="modalLocation"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 全球山峰美术馆 | Created by MiniMax Agent</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
